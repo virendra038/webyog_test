@@ -1,6 +1,6 @@
 <h1>Messages</h1>
 
-<div ng-repeat="x in data" >
+<div ng-repeat="x in data" ng-class="started ? 'btn-warning' : 'btn-danger'" >
 	<button ui-sref="message" ng-click="msg(x)" id="we">
 	<p><h2>Participants : {{x.participants[0] + ",    " + x.participants[1]}}</h2> Subject : {{x.subject}}<br><br><br></p>
 

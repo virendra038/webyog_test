@@ -7,7 +7,7 @@ var webyogApp = angular.module('webyogApp', [
     
   ]);
 
-  webyogApp.config(function ($stateProvider,$urlRouterProvider,$httpProvider) {
+  webyogApp.config(function ($stateProvider,$urlRouterProvider) {
     // $httpProvider.interceptors.push('myInterceptor');
   	$urlRouterProvider.otherwise('/messages');
   	$stateProvider
@@ -20,7 +20,7 @@ var webyogApp = angular.module('webyogApp', [
             url: '/message',
             templateUrl: '../views/msg.html',
             controller: 'messageCtrl',
-        })
+        });
         
 
 

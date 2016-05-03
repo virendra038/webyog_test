@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 angular.module('webyogApp')
     .service('service',function ($http,$q) {
 
@@ -13,19 +14,19 @@ angular.module('webyogApp')
      method  : 'GET',
      url     : URL+'/message/',
      headers: {
-        "Accept": "application/json, text/plain, */*",
+        'Content-Type':'application/json'
 
     }
     })
     .success(function(response){
         defer.resolve(response);
     })
-    .error(function(error,status){
+    .error(function(error){
       defer.reject(error);
-    })
+    });
 
-   return defer.promise
-	}
+   return defer.promise;
+	};
 
     service.getMessage = function(x){
          
@@ -34,19 +35,19 @@ angular.module('webyogApp')
      method  : 'GET',
      url     : URL+'/message/'+x.id,
      headers: {
-        "Accept": "application/json, text/plain, */*",
+        'Accept': 'application/json, text/plain, */*',
 
     }
     })
     .success(function(response){
         deferl.resolve(response);
     })
-    .error(function(error,status){
+    .error(function(error){
       deferl.reject(error);
-    })
+    });
 
-   return deferl.promise
-    }
+   return deferl.promise;
+    };
 
     service.delete = function(x){
          
@@ -55,19 +56,19 @@ angular.module('webyogApp')
      method  : 'DELETE',
      url     : URL+'/message/'+x,
      headers: {
-        "Accept": "application/json, text/plain, */*",
+        'Accept': 'application/json, text/plain, */*',
 
     }
     })
     .success(function(response){
         deferdl.resolve(response);
     })
-    .error(function(error,status){
+    .error(function(error){
       deferdl.reject(error);
-    })
+    });
 
-   return deferdl.promise
-    }
+   return deferdl.promise;
+    };
 
 
    
